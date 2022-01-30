@@ -37,6 +37,6 @@ class SEndEmail(Resource):
         for email in emails:
             mail = send_mails(sender='Tolemsoft Technologies', receiver=email, subject=subject, name=name, token="#", token_name="Thank you!", message=msg)
         print("Emails sent successfully")
-        return {"status":True, "message":"Emails sent successfully", "data": ""}, 200
+        return {"status":True, "message":"Emails sent successfully", "data": emails}, 200
 
 api.add_resource(SEndEmail, '/api/v1/sendmail')
