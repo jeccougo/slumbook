@@ -15,19 +15,14 @@ AUTHORIZATION_URL = 'https://accounts.google.com/o/oauth2/v2/auth?access_type=of
 AUTHORIZATION_SCOPE ='openid email profile'
 
 # AUTH_REDIRECT_URI = os.environ.get("FN_AUTH_REDIRECT_URI", default=False)
-AUTH_REDIRECT_URI = "http://127.0.0.1:5000/google/auth"
+AUTH_REDIRECT_URI = "https://slumbuk.herokuapp.com/google/auth"
 # BASE_URI = os.environ.get("FN_BASE_URI", default=False)
-BASE_URI = "http://127.0.0.1:5000/"
-# CLIENT_ID = os.environ.get("CLIENT_ID", default=False)
-# CLIENT_SECRET = os.environ.get("CLIENT_SECRET", default=False)
+BASE_URI = "https://slumbuk.herokuapp.com/"
+CLIENT_ID = os.environ.get("CLIENT_ID", default=False)
+CLIENT_SECRET = os.environ.get("CLIENT_SECRET", default=False)
 
-# AUTH_TOKEN_KEY = os.environ.get("AUTH_TOKEN_KEY", default=False)
-# AUTH_STATE_KEY = os.environ.get("AUTH_STATE_KEY", default=False)
-CLIENT_ID = "643240700705-uhfceura47bfp82inneued1ml78je00f.apps.googleusercontent.com"
-CLIENT_SECRET = "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"
-
-AUTH_TOKEN_KEY = "auth_token"
-AUTH_STATE_KEY = "auth_state"
+AUTH_TOKEN_KEY = os.environ.get("AUTH_TOKEN_KEY", default=False)
+AUTH_STATE_KEY = os.environ.get("AUTH_STATE_KEY", default=False)
 
 # app = flask.Blueprint('google_auth', __name__)
 
@@ -70,7 +65,7 @@ def no_cache(view):
 
 def post_userInfo(user_info):
     try:
-        url = "https://tellbook.herokuapp.com/api/v1/users/gmail"
+        url = "https://slumbuk.herokuapp.com/api/v1/users/gmail"
         r = requests.post(url=url, json=user_info)
         response = r.json()
         return response

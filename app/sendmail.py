@@ -151,7 +151,7 @@ def send_mails(sender, receiver, subject,name, token, token_name, message):
             </p>
 
             <p style="font-size: 15px; margin-bottom: 0px;">
-              If you think this email was sent in error, please <a href="http://www.tolemsoft.com.ng/contact" style="color: #4ab1b9; text-decoration: underline;">visit our help desk</a> or <a href="mailto:nnorukaemeka@gmail.com">contact support</a>. Thank you!
+              If you think this email was sent in error, please <a href="https://slumbuk.herokuapp.com/contact" style="color: #4ab1b9; text-decoration: underline;">visit our help desk</a> or <a href="mailto:nnorukaemeka@gmail.com">contact support</a>. Thank you!
             </p>
           </div>
         </main>
@@ -186,7 +186,7 @@ def send_mails(sender, receiver, subject,name, token, token_name, message):
         mail.ehlo()
         mail.starttls()
         # mail.login(os.environ.get('MAIL_USERNAME'), os.environ.get('MAIL_PASSWORD'))
-        mail.login("nnorukaemeka@gmail.com", "ssfjphomvdegivxv")
+        mail.login("nnorukaemeka@gmail.com", os.environ.get("gmailaccess"))
         mail.sendmail(sender, receiver, msg.as_string())
         mail.quit()
 
